@@ -3,6 +3,7 @@ import Book from './book.js';
 import {connect} from 'react-redux';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
+//passed from mapStateToProps from redux which gets state info from reducers 
 const Books = ({books, displayMode, currentStatus}) => {
    const styles = {
     container: {
@@ -53,7 +54,8 @@ const Books = ({books, displayMode, currentStatus}) => {
 const mapStateToProps = state => ({
   books: state.books,
   topic: state.topic,
-  currentStatus: state.currentStatus
+  currentStatus: state.currentStatus,
+  displayMode: state.displayMode
 });
 
 export default connect(mapStateToProps, null)(Books);
